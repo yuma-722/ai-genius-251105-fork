@@ -160,7 +160,7 @@ Review the Dockerfile for the ai-service microservice and suggest security impro
 
 #### Store Front Testing:
 ```text
-@playwright Create comprehensive smoke tests for an e-commerce store front at [URL]. Include tests for:
+#playwright Create comprehensive smoke tests for an e-commerce store front at [URL]. Include tests for:
 - Homepage loading and basic navigation
 - Product catalog browsing
 - Product detail page functionality  
@@ -171,7 +171,7 @@ Review the Dockerfile for the ai-service microservice and suggest security impro
 
 #### Store Admin Testing:
 ```text
-@playwright Create smoke tests for store admin panel at [URL]. Test:
+#playwright Create smoke tests for store admin panel at [URL]. Test:
 - Admin login page and authentication
 - Product management dashboard
 - Add new product functionality
@@ -185,7 +185,7 @@ Review the Dockerfile for the ai-service microservice and suggest security impro
 
 #### Infrastructure Generation:
 ```text
-@terraform Help me find a production-ready AKS module
+#terraform Help me find a production-ready AKS module
 ```
 **Expected:** Enhanced Terraform module recommendations with documentation
 
