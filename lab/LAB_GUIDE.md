@@ -17,19 +17,20 @@ By the end of this workshop, you will be able to:
 
 ## Lab Environment Setup
 
-### Virtual Machine Access
+### Prerequisites
 
-Log in using the credentials provided:
-
-- Password: <VM_PASSWORD>
-
-### Azure Portal Authentication
-
-1. Open Microsoft Edge (opens to Azure Portal automatically)
-2. Username: <AZURE_USERNAME>
-3. Temporary Access Pass: <AZURE_TEMPORARY_ACCESS_PASS>
-
----
+- Windows 11
+- Docker Desktop
+- Azure CLI
+- Azure Developer CLI
+- Git command line
+- Kubectl
+- Helm
+- Visual Studio Code
+- PowerShell 7
+- Windows Terminal
+- GitHub account
+- Azure subscription
 
 ===
 
@@ -45,9 +46,12 @@ Open Windows Terminal and update the **azd** tool.
 Invoke-RestMethod 'https://aka.ms/install-azd.ps1' | Invoke-Expression
 ```
 
-The update will close the terminal. Open Windows Terminal and navigate to the demo project:
+The update will close the terminal.
+
+Open Windows Terminal and clone the the demo project:
 
 ```PowerShell-notab-nocolor
+git clone https://github.com/microsoft/aitour26-WRK570-improving-ops-with-copilot-in-azure-and-github-copilot aks-store-demo
 cd ./aks-store-demo
 ```
 
@@ -59,7 +63,7 @@ Run both commands to authenticate:
 azd auth login
 ```
 
-> [!NOTE] This opens a browser window. Use the same credentials: <AZURE_USERNAME>
+> [!NOTE] This opens a browser window. Use your Azure credentials: <AZURE_USERNAME>
 
 ```PowerShell-notab-nocolor
 az login
@@ -67,7 +71,7 @@ az login
 
 This opens a prompt for authentication.
 
-Choose "Work or school account".
+Choose "Work or school account" or "Microsoft account" as appropriate for your Azure credentials.
 
 Click "Continue".
 
@@ -75,13 +79,13 @@ On the sign in screen, use <AZURE_USERNAME>.
 
 Click "Next".
 
-For the Temporary Access Pass, use <AZURE_TEMPORARY_ACCESS_PASS>.
+Authenticate with your second factor - MFA, Temporary Access Pass, etc.
 
 Click "Sign in".
 
 When asked to "automatically sign in to all desktop apps and websites on this device", choose "No, this app only".
 
-When prompted to select a subscription and tenant, just press "Enter" for the default.
+When prompted to select a subscription and tenant, select the subscription you'd like to use.
 
 ### Step 3: Register Azure Resource Providers
 
@@ -113,6 +117,8 @@ azd config set alpha.aks.helm on
 ```
 
 #### Set Environment Variables
+
+There are some common overrides based on current Azure demand - if you get an error deploying, add an override based on the error from the deployment (the error will list the valid availability zones).
 
 ```PowerShell-notab-nocolor
 $Overrides = @{
@@ -146,7 +152,7 @@ if ($Overrides.Keys -contains '<AZURE_LOCATION>') {
 azd up
 ```
 
-> [!NOTE] **ACTION:** You will be prompted to select a subscription to use. There is just one option - <AZURE_SUBSCRIPTION_NAME>. Select it.
+> [!NOTE] **ACTION:** You will be prompted to select a subscription to use. Select the same subscription you selected for the Azure CLI login.
 
 > [!NOTE] **What happens next:** Azure Developer CLI deploys infrastructure using Bicep, then uses Helm to deploy the application to AKS. The Azure resources were pre-deployed when the lab started, but it will take a few minutes to validate everything is in place.
 
