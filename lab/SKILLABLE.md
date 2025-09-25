@@ -1937,7 +1937,7 @@ Add the Terraform MCP server to GitHub Copilot's configuration:
 4. Add the image name.
 
 ```PowerShell-notab-nocolor
-hashicorp/terraform-mcp-server
+hashicorp/terraform-mcp-server:0.3.0
 ```
 
 5. Choose "Allow" for the required permissions.
