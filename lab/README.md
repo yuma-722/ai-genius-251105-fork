@@ -1,23 +1,22 @@
-
-
-These instructions are for participants of the **instructor-led** Workshop "SESSIONNAME" at Microsoft AI Tour 2026.  Register to attend in a city near you at [Microsoft AI Tour](https://aitour.microsoft.com/).
+These instructions are for participants of the **instructor-led** Workshop "Improving Ops with Copilot in Azure and GitHub Copilot" at Microsoft AI Tour 2026. Register to attend in a city near you at [Microsoft AI Tour](https://aitour.microsoft.com/).
 
 ## Lab Overview
 
 In this hands-on workshop, you’ll learn to:
-* Use `azd` to deploy applications to Azure.
-* Use Copilot in Azure to build operational awareness.
-* Use Copilot in Azure to improve resilience for your environment.
-* Use Copilot in Azure to create durable automation.
-* Use GitHub Copilot to improve the build and deployment process.
+
+- Use `azd` to deploy applications to Azure.
+- Use Copilot in Azure to build operational awareness.
+- Use Copilot in Azure to improve resilience for your environment.
+- Use Copilot in Azure to create durable automation.
+- Use GitHub Copilot to improve the build and deployment process.
 
 ## Pre-Requisites
 
 To participate in this workshop, you will need:
 
 1. Your own laptop.
-   * It need only be capable of running a browser and GitHub Codespaces, so almost any laptop will do.
-   * A recent version of Edge, Chrome or Safari is recommended.
+   - It need only be capable of running a browser and GitHub Codespaces, so almost any laptop will do.
+   - A recent version of Edge, Chrome or Safari is recommended.
 2. A GitHub account (a free personal account will work)
 
 ## Get Started
