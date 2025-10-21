@@ -48,7 +48,7 @@ services:
       helm:
         repositories:
           - name: aks-store-demo
-            url: https://smurawski.github.io/aks-store-demo
+            url: https://usepowershell.github.io/aks-store-demo
         releases:
           - name: demo
             chart: aks-store-demo/aks-store-demo-chart
@@ -63,7 +63,7 @@ services:
       helm:
         repositories:
           - name: aks-store-demo
-            url: https://smurawski.github.io/aks-store-demo
+            url: https://usepowershell.github.io/aks-store-demo
         releases:
           - name: demo
             chart: aks-store-demo/aks-store-demo-chart

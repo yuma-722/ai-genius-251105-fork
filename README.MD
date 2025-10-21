@@ -57,12 +57,12 @@ _Additional Languages are coming soon._
 
 <table>
 <tr>
-    <td align="center"><a href="http://github.com/smurawski">
-        <img src="https://github.com/smurawski.png" width="100px;" alt="Steven Murawski"
+    <td align="center"><a href="http://github.com/usepowershell">
+        <img src="https://github.com/usepowershell.png" width="100px;" alt="Steven Murawski"
 "/><br />
         <sub><b> Steven Murawski
 </b></sub></a><br />
-            <a href="https://github.com/smurawski" title="talk">📢</a> 
+            <a href="https://github.com/usepowershell" title="talk">📢</a> 
     </td>
 </tr></table>
 
