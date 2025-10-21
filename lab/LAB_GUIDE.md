@@ -26,6 +26,7 @@ By the end of this workshop, you will be able to:
 - Git command line
 - Kubectl
 - Helm
+- Azure Kubelogin
 - Visual Studio Code
 - PowerShell 7
 - Windows Terminal
