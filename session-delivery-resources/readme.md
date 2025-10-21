@@ -12,9 +12,10 @@ Prior to delivering the workshop please:
 
 | Resources                  | Links                                           | Description                                                                        |
 | ---------------------      | ----------------------------------------------- | ---------------------------------------------------------------------------------- |
-| Workshop Slide Deck        | [Presentation](https://aka.ms/WRK570-slides)    | Presentation slides for this workshop with presenter notes and embedded demo video |
+| Workshop Slide Deck        | [Presentation](https://aka.ms/WRK570-slides)    | Presentation slides for this workshop with presenter notes |
 | Session Delivery Recording | [Recording](https://youtu.be/vIxljMD_Sk8)    | The session delivery Recording                                                        |
-| Prompt Checklist           | [Prompt Checklist](../docs/prompt_checklist.md) | Tips for effective prompting                                                       |
+| Prompt Checklist           | [Prompt Checklist](../docs/prompt_checklist.md) | Tips for effective prompting    
+| Proctor Cheat Sheet        | [Prompt Checklist](../docs/copilot_cheat_sheet.md) | Reference and Troubleshooting guide for proctors                           |
 
 ## 🚀Get Started
 
