@@ -6,22 +6,60 @@ This cheat sheet provides a quick reference for workshop proctors on the differe
 
 ---
 
+## General Command Failures
+
+- [] Ensure the user is in PowerShell 7 in the Windows Terminal
+- [] Ensure the user is in the correct folder ($env:USERPROFILE/aks-store-demo)
+
 ## AZD Deployment Failure
 
 The `azd` deployment can potentially fail if the availability zones in the region where the resources are being deployed change availability.
 
+You will see an error like:
+
+```text
+ERROR: error executing step command 'provision': deployment failed: error deploying infrastructure: validating deployment to resource group:
+
+Validation Error Details:
+POST https://management.azure.com/subscriptions/<SUBSCRIPTION_ID>/resourcegroups/<RESOURCE_GROUP_NAME>/providers/Microsoft.Resources/deployments/aitour-1761061937/validate
+
+--------------------------------------------------------------------------------
+RESPONSE 400: 400 Bad Request
+ERROR CODE: InvalidTemplateDeployment
+--------------------------------------------------------------------------------
+
+{
+  "error": {
+    "code": "InvalidTemplateDeployment",
+    "message": "The template deployment 'aitour-1761061937' is not valid according to the validation procedure. The tracking id is '421aa3c7-aae7-4257-8a36-a6db46f5fd0d'. See inner errors for details.",
+    "details": [
+      {
+        "code": "AvailabilityZoneNotSupported",
+        "message": "Preflight validation check for resource(s) for container service aks-aitourrkdg in resource group <RESOURCE_GROUP_NAME> failed. Message: The zone(s) '1' for resource 'system' is not supported. The supported zones for location 'eastus2' are '3,2'. Details: "
+      }
+    ]
+  }
+}
+--------------------------------------------------------------------------------
+```
+
 There are currently overrides for the few restrictions that have been found during the course development, but if a user has a problem, they can add an override using the availability zones mentioned in the error response.
 
-```
+```powershell
 $Overrides = @{
   "eastus2" = @{"zones" = ("2", "3")}
   "westus2" = @{"zones" = @("3")}
   "eastus" = @{"zones" = ("2", "1")}
- # Add the problem region here, with the valid zones mentioned in the error.
+  # Replace REGION with the problem region in the sample below, adjusting to the the valid zones mentioned in the error message.
+  # then, uncomment and paste this section into the terminal
+  # "REGION" = @{"zones" = ("3", "2", "1")}
 }
+```
 
-# Then, rerun
-$zones = $Overrides['<AZURE_LOCATION>'].zones -join ', '
+Then, replace REGION with your region in the snippet below and run the below commands.
+
+```powershell
+$zones = $Overrides['REGION'].zones -join ', '
 azd env set AKS_AVAILABILITY_ZONES $zones
 
 # retry the deployment
@@ -29,6 +67,8 @@ azd up
 ```
 
 ---
+
+# Lab Exercise Notes
 
 ## 1. Copilot in Azure Portal
 
